@@ -19,6 +19,7 @@ def pam_sm_authenticate(pamh, flags, argv):
 	    syslog.syslog("pam keystone success for %s" % pamh.user)
 	    return pamh.PAM_SUCCESS
 	except:
+	    syslog.syslog("pam keystone fail for %s" % pamh.user)
 	    pass
     except:
 	syslog.syslog("Unhandled exception %s " % traceback.format_exc())
