@@ -33,7 +33,7 @@ def pam_sm_authenticate(pamh, flags, argv):
                     }
                 }
             }
-            req = urllib2.Request('https://nubo-7.sandvine.rocks:5000/v2.0/tokens')
+            req = urllib2.Request('https://keystone.sandvine.rocks/v2.0/tokens')
             req.add_header('Content-Type', 'application/json')
             try:
                 response = urllib2.urlopen(req, json.dumps(val))
